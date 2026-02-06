@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-electron
+release
+cache_simples_nacional.json
+__pycache__/
+*.pyc
+*.pyo
+*.log
