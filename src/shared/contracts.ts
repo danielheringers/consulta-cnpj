@@ -1,12 +1,12 @@
 export const IPC_CHANNELS = {
-  selectFile: "dialog:select-xlsx",
-  startJob: "job:start",
-  stopJob: "job:stop",
-  openPath: "shell:open-path",
-  jobEvent: "job:event"
+  selectFile: 'dialog:select-xlsx',
+  startJob: 'job:start',
+  stopJob: 'job:stop',
+  openPath: 'shell:open-path',
+  jobEvent: 'job:event',
 } as const;
 
-export type QueryStatus = "SIM" | "NAO" | "SEM_DADO" | "ERRO" | "CNPJ_INVALIDO" | "PENDENTE";
+export type QueryStatus = 'SIM' | 'NÃO' | 'ERRO' | 'CNPJ_INVALIDO' | 'PENDENTE';
 
 export interface JobStartRequest {
   inputFile: string;
@@ -34,36 +34,36 @@ export interface ProcessResult {
 }
 
 export interface QueryOutcome {
-  status: QueryStatus | "ERRO";
+  status: QueryStatus | 'ERRO';
   detail: string;
   provider: string;
 }
 
 export interface LogEvent {
-  type: "log";
+  type: 'log';
   message: string;
 }
 
 export interface ProgressEvent {
-  type: "progress";
+  type: 'progress';
   done: number;
   total: number;
 }
 
 export interface DoneEvent {
-  type: "done";
+  type: 'done';
   result: ProcessResult;
 }
 
 export interface ErrorEvent {
-  type: "error";
+  type: 'error';
   message: string;
 }
 
 export type WorkerEvent = LogEvent | ProgressEvent | DoneEvent | ErrorEvent;
 
 export interface WorkerControlMessage {
-  type: "stop";
+  type: 'stop';
 }
 
 export interface BridgeApi {

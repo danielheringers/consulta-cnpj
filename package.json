@@ -1,7 +1,7 @@
 {
   "name": "consulta-cnpj-electron",
   "version": "1.0.0",
-  "description": "Consulta Simples Nacional em Electron",
+  "description": "4tax Fiscal Cloud - Consulta Simples Nacional",
   "main": "dist-electron/main/main.js",
   "author": "Orbit",
   "license": "MIT",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "exceljs": "^4.4.0",
+    "framer-motion": "^12.33.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -51,9 +52,14 @@
       "package.json"
     ],
     "win": {
+      "icon": "build/icon.ico",
       "target": [
         "nsis"
       ]
+    },
+    "nsis": {
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
     }
   }
 }
